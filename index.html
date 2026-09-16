@@ -301,10 +301,77 @@
   .particle{position:absolute;font-size:22px;animation:particle .9s ease-out forwards;}
   @keyframes particle{from{transform:translate(0,0) scale(.6);opacity:1;}to{transform:translate(var(--dx),var(--dy)) scale(1.1);opacity:0;}}
 
+  /* ---------- Identidade por dispositivo ---------- */
+  #deviceUserSlot{margin-top:10px;}
+  .device-chip{display:inline-flex;align-items:center;gap:8px;padding:6px 12px 6px 6px;border-radius:999px;
+    background:var(--surface);border:1px solid var(--glass-edge);box-shadow:var(--shadow-soft);
+    backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);font-size:12.5px;font-weight:700;}
+  .device-chip .av{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;}
+  .device-chip .sw{color:var(--accent);font-weight:700;font-size:11.5px;}
+  .undo-btn{margin-left:12px;font-weight:800;color:#fff;background:none;border:none;text-decoration:underline;font-size:13px;}
+  .toast-undo{animation:toastin .3s ease !important;}
+  .id-overlay{position:fixed;inset:0;z-index:400;pointer-events:auto;background:linear-gradient(160deg,var(--tint),#fff);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;padding:28px;text-align:center;}
+  .id-overlay h2{font-size:24px;font-weight:800;}
+  .id-overlay .sub{font-size:14px;color:var(--ink-soft);max-width:340px;line-height:1.5;}
+  .id-people{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;margin-top:6px;}
+  .id-person{background:var(--surface);border:1px solid var(--glass-edge);border-radius:22px;box-shadow:var(--shadow);
+    padding:22px 26px;display:flex;flex-direction:column;align-items:center;gap:10px;min-width:130px;cursor:pointer;transition:transform .15s ease;}
+  .id-person:active{transform:scale(.96);}
+  .id-person .big-av{width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:34px;box-shadow:var(--shadow-soft);}
+  .id-person .nm{font-size:16px;font-weight:700;}
+  .id-setup{background:var(--surface);border:1px solid var(--glass-edge);border-radius:24px;box-shadow:var(--shadow);
+    padding:22px;width:100%;max-width:420px;text-align:left;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);}
+  .pin-dots{display:flex;gap:12px;justify-content:center;margin:16px 0;}
+  .pin-dot{width:16px;height:16px;border-radius:50%;background:var(--border);transition:background .15s;}
+  .pin-dot.filled{background:var(--accent);}
+  .pin-pad{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:260px;margin:0 auto;}
+  .pin-pad button{padding:16px 0;border-radius:16px;font-size:20px;font-weight:700;background:var(--surface);border:1px solid var(--glass-edge);box-shadow:var(--shadow-soft);}
+  .pin-pad button:active{transform:scale(.94);}
+
+  /* ---------- Painel: seletor de período ---------- */
+  .period-bar{display:flex;gap:6px;overflow-x:auto;padding:2px 0 4px;margin-bottom:6px;-webkit-overflow-scrolling:touch;}
+  .period-bar button{white-space:nowrap;padding:7px 14px;border-radius:999px;font-size:12.5px;font-weight:700;
+    background:var(--surface);border:1px solid var(--glass-edge);color:var(--ink-soft);box-shadow:var(--shadow-soft);
+    backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);}
+  .period-bar button.active{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;border-color:transparent;}
+  .custom-range{display:flex;gap:10px;align-items:flex-end;margin-bottom:6px;}
+  .custom-range .field{flex:1;margin-bottom:0;}
+
+  /* ---------- Aviso de lembrete na agenda ---------- */
+  .reminder-banner{display:flex;align-items:flex-start;gap:9px;background:var(--couple-soft, #FBF0DC);
+    border:1px solid rgba(245,136,59,0.3);border-radius:var(--radius-sm);padding:11px 13px;margin-bottom:12px;
+    font-size:12.5px;font-weight:600;color:#9A5B12;}
+  .reminder-banner .rb-emoji{font-size:16px;}
+
   /* ---------- Misc ---------- */
   .muted{color:var(--ink-soft);font-size:12.5px;}
   .hidden{display:none !important;}
   .flex-between{display:flex;justify-content:space-between;align-items:center;}
+
+  /* ---------- Biblioteca ---------- */
+  .lib-tabs{display:flex;gap:8px;margin-bottom:14px;}
+  .lib-tabs button{flex:1;padding:10px;border-radius:12px;font-weight:700;font-size:13.5px;
+    background:#F3F0F8;color:var(--ink-soft);}
+  .lib-tabs button.active{background:var(--accent-soft);color:var(--accent);}
+  .lib-seg{display:flex;gap:6px;margin-bottom:12px;align-items:center;flex-wrap:wrap;}
+  .lib-seg .lbl{font-size:12px;color:var(--ink-soft);font-weight:600;}
+  .lib-seg button{padding:6px 12px;border-radius:999px;font-size:12.5px;font-weight:700;background:#F3F0F8;color:var(--ink-soft);}
+  .lib-seg button.active{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;}
+  .lib-cat{font-size:12.5px;font-weight:800;color:var(--ink);margin:16px 0 8px;display:flex;justify-content:space-between;align-items:center;}
+  .lib-cat button{font-size:11.5px;font-weight:700;color:var(--accent);background:var(--accent-soft);border-radius:999px;padding:4px 10px;}
+  .lib-item{display:flex;align-items:center;gap:10px;padding:9px 4px;border-bottom:1px solid var(--hair);}
+  .lib-item .li-emoji{font-size:20px;width:26px;text-align:center;flex-shrink:0;}
+  .lib-item .li-body{flex:1;min-width:0;}
+  .lib-item .li-title{font-size:13.5px;font-weight:600;}
+  .lib-item .li-meta{font-size:11px;color:var(--ink-soft);margin-top:1px;}
+  .lib-add{flex-shrink:0;border-radius:999px;padding:6px 12px;font-size:12px;font-weight:700;
+    background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;}
+  .lib-add.added{background:rgba(47,190,134,0.16);color:#1E9E6C;pointer-events:none;}
+  .danger-zone{margin-top:22px;padding-top:16px;border-top:1px solid var(--danger-soft);}
+  .danger-zone .dz-title{font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--danger);margin-bottom:6px;}
+  .danger-zone p{font-size:12px;color:var(--ink-soft);margin-bottom:10px;line-height:1.4;}
+  .btn-outline-danger{background:transparent;border:1px solid var(--danger);color:var(--danger);width:100%;margin-bottom:8px;}
 
   /* =====================================================
      DESKTOP / PC — sidebar lateral e grids mais largos
@@ -377,6 +444,7 @@
         </div>
         <button class="gear" id="settingsBtn" title="Configurações">⚙️</button>
       </div>
+      <div id="deviceUserSlot"></div>
       <div class="couple-band" id="coupleBand"></div>
     </header>
 
@@ -396,7 +464,10 @@
       <section class="view" id="view-metas">
         <div class="section-title">
           <h2>Nossas metas</h2>
-          <button class="btn btn-primary btn-sm" id="newGoalBtn">+ Nova meta</button>
+          <div class="btn-row">
+            <button class="btn btn-sm" id="libGoalsBtn">✨ Biblioteca</button>
+            <button class="btn btn-primary btn-sm" id="newGoalBtn">+ Nova</button>
+          </div>
         </div>
         <div id="goalsList"></div>
       </section>
@@ -405,7 +476,10 @@
       <section class="view" id="view-loja">
         <div class="section-title">
           <h2>Catálogo de experiências</h2>
-          <button class="btn btn-primary btn-sm" id="newProductBtn">+ Nova recompensa</button>
+          <div class="btn-row">
+            <button class="btn btn-sm" id="libProductsBtn">✨ Biblioteca</button>
+            <button class="btn btn-primary btn-sm" id="newProductBtn">+ Nova</button>
+          </div>
         </div>
         <div id="productsList"></div>
         <div class="section-title"><h2>Extrato da carteira</h2></div>
@@ -423,14 +497,13 @@
 
       <!-- DASHBOARD -->
       <section class="view" id="view-dashboard">
-        <div class="section-title"><h2>Nossa semana ❤️</h2></div>
-        <div class="stat-grid" id="dashToday"></div>
+        <div id="dashPeriodBar" class="period-bar"></div>
+        <div id="dashCustomRange"></div>
+        <div class="section-title"><h2 id="dashPeriodLabel">Nossa semana ❤️</h2></div>
+        <div class="stat-grid" id="dashStats"></div>
 
-        <div class="section-title"><h2>Últimos 7 dias</h2></div>
-        <div class="card"><div id="dashWeekChart"></div></div>
-
-        <div class="section-title"><h2 id="dashMonthLabel">Este mês</h2></div>
-        <div class="stat-grid" id="dashMonth"></div>
+        <div class="section-title"><h2>Atividade</h2></div>
+        <div class="card"><div id="dashChart"></div></div>
 
         <div class="section-title"><h2>Nós dois</h2></div>
         <div class="card"><div id="dashCompare"></div></div>
@@ -486,7 +559,12 @@ const state = {
   goals: [], records: [], transactions: [], products: [], purchases: [], challenges: [],
   currentDate: todayStr(),
   activeTab: 'agenda',
+  currentUser: null,   // 'p1' | 'p2' — quem está usando ESTE aparelho (salvo localmente)
+  lastAction: null,    // para o "Desfazer"
+  dashPeriod: 'week',  // filtro do painel
+  dashCustom: null,    // {from,to} para período personalizado
 };
+const modalRoot = document.getElementById('modalRoot');
 const ready = { settings:false, goals:false, records:false, transactions:false, products:false, purchases:false, challenges:false };
 function allReady(){ return Object.values(ready).every(Boolean); }
 function hideLoading(){ const el=document.getElementById('loadingScreen'); if(el) el.style.display='none'; }
@@ -524,9 +602,21 @@ function scheduleRender(){
 /* =========================================================
    DATE HELPERS
    ========================================================= */
-function todayStr(d=new Date()){
+function fmtDateObj(d){
   const y=d.getFullYear(), m=String(d.getMonth()+1).padStart(2,'0'), day=String(d.getDate()).padStart(2,'0');
   return `${y}-${m}-${day}`;
+}
+function todayStr(d){
+  if(d) return fmtDateObj(d);
+  // data de "hoje" no fuso de São Paulo, independente do relógio do aparelho
+  try{
+    return new Intl.DateTimeFormat('en-CA',{timeZone:'America/Sao_Paulo',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
+  }catch(e){ return fmtDateObj(new Date()); }
+}
+function nowHHMM(){
+  try{
+    return new Intl.DateTimeFormat('en-GB',{timeZone:'America/Sao_Paulo',hour:'2-digit',minute:'2-digit',hour12:false}).format(new Date());
+  }catch(e){ const d=new Date(); return String(d.getHours()).padStart(2,'0')+':'+String(d.getMinutes()).padStart(2,'0'); }
 }
 function addDays(dateStr, n){
   const [y,m,d]=dateStr.split('-').map(Number);
@@ -565,12 +655,14 @@ function fmtMoney(v){
 onSnapshot(doc(db,'settings','config'), async (snap)=>{
   if(snap.exists()){ state.settings = snap.data(); }
   else {
-    const def = { p1:{name:'Você', emoji:'🧑'}, p2:{name:'Ela', emoji:'👩'}, coupleName:'Metinhas', currency:'R$' };
+    const def = { p1:{name:'Você', emoji:'🐻'}, p2:{name:'Ela', emoji:'🐰'}, coupleName:'Metinhas dos Nenéns', currency:'R$',
+                  configured:false, allowNegative:true, dailyPenaltyLimit:0 };
     await setDoc(doc(db,'settings','config'), def);
     state.settings = def;
   }
   const _t=document.getElementById('appTitle'); if(_t) _t.textContent = state.settings.coupleName || 'Metinhas';
   markReady('settings'); scheduleRender();
+  checkIdentity();
 }, onSnapErr('settings'));
 onSnapshot(col('goals'), (snap)=>{
   state.goals = snap.docs.map(d=>({id:d.id, ...d.data()}));
@@ -625,6 +717,13 @@ function goalDue(goal, personId, dateStr){
     const diff = Math.round((new Date(dateStr) - new Date(anchor))/86400000);
     return diff>=0 && diff % (p.intervalDays||1) === 0;
   }
+  if(p.type==='yearly_count'){
+    const yk=dateStr.slice(0,4);
+    return countCompletedInPeriod(goal.id,personId,yk,d=>d.slice(0,4)) < (p.timesPerYear||1);
+  }
+  if(p.type==='specific_date'){
+    return p.date===dateStr;
+  }
   return false;
 }
 let syncing=false;
@@ -643,7 +742,7 @@ async function runSyncThenRender(){
 async function generateRecordsForToday(){
   const dateStr = todayStr();
   for(const goal of state.goals){
-    if(goal.active===false) continue;
+    if(goal.active===false || goal.archived) continue;
     for(const personId of instancesFor(goal)){
       if(!goalDue(goal, personId, dateStr)) continue;
       const exists = state.records.some(r=>r.goalId===goal.id && r.personId===personId && r.date===dateStr);
@@ -662,21 +761,44 @@ async function generateRecordsForToday(){
     }
   }
 }
+/* ---- Helpers financeiros: idempotência, teto de penalidade, saldo negativo ---- */
+function txExists(key){ return !!key && state.transactions.some(t=>t.idemKey===key); }
+function todaysPenalties(personId){
+  const today=todayStr();
+  return state.transactions.filter(t=>t.type==='goal_penalty' && t.personId===personId && t.date===today).reduce((s,t)=>s+Math.abs(t.amount),0);
+}
+function penaltyCapInfo(personId, rawPenalty){
+  const s=state.settings||{}; let amount=rawPenalty; let capped=false;
+  const limit=Number(s.dailyPenaltyLimit)||0;
+  if(limit>0){ const remaining=Math.max(0, limit - todaysPenalties(personId)); if(amount>remaining){ amount=remaining; capped=true; } }
+  if(s.allowNegative===false){ const room=Math.max(0, balance(personId)); if(amount>room){ amount=room; capped=true; } }
+  return {amount, capped};
+}
+async function addTx(data, idemKey){
+  if(txExists(idemKey)) return null;   // não cobra/premia duas vezes
+  const payload={...data, idemKey:idemKey||null, createdAt:serverTimestamp()};
+  const ref=await addDoc(col('transactions'), payload);
+  const id=ref?.id||('tmp-'+Math.random());
+  state.transactions.push({id, ...payload});  // reflexo imediato (some no próximo snapshot)
+  return id;
+}
+
 async function resolveStalePending(){
   const today = todayStr();
   const stale = state.records.filter(r=>r.status==='pending' && r.date<today && !String(r.id).startsWith('temp-'));
   for(const r of stale){
-    const penalty = r.penaltySnapshot||0;
-    if(penalty>0){
-      await updateDoc(doc(db,'goalRecords',r.id), {status:'failed', amountApplied:-penalty, resolvedAt:serverTimestamp()});
-      await addDoc(col('transactions'), {
-        personId: r.personId==='both'?'couple':r.personId, type:'goal_penalty', amount:-penalty,
-        description:`Meta não cumprida: ${r.goalTitle}`, relatedId:r.id, date:r.date, createdAt:serverTimestamp()
-      });
+    const rawPenalty = r.penaltySnapshot||0;
+    if(rawPenalty>0){
+      const payPerson = r.personId==='both'?'couple':r.personId;
+      const {amount,capped} = penaltyCapInfo(payPerson, rawPenalty);
+      await updateDoc(doc(db,'goalRecords',r.id), {status:'failed', amountApplied:-amount, resolvedAt:serverTimestamp()});
+      await addTx({personId:payPerson, type:'goal_penalty', amount:-amount,
+        description:`Meta não cumprida: ${r.goalTitle}${capped?' (limitado pelo teto)':''}`, relatedId:r.id, date:r.date}, `${r.id}:goal_penalty`);
+      r.status='failed';
     } else {
       await updateDoc(doc(db,'goalRecords',r.id), {status:'expired', amountApplied:0, resolvedAt:serverTimestamp()});
+      r.status='expired';
     }
-    r.status = penalty>0 ? 'failed' : 'expired';
   }
 }
 async function evaluateChallenges(){
@@ -690,10 +812,8 @@ async function evaluateChallenges(){
     if(count >= c.targetCount){
       await updateDoc(doc(db,'challenges',c.id), {status:'completed', currentCount:count});
       c.status='completed';
-      await addDoc(col('transactions'), {
-        personId: c.participant==='both'?'couple':c.participant, type:'challenge_reward', amount:Number(c.reward)||0,
-        description:`Desafio concluído: ${c.title}`, relatedId:c.id, date:today, createdAt:serverTimestamp()
-      });
+      await addTx({personId: c.participant==='both'?'couple':c.participant, type:'challenge_reward', amount:Number(c.reward)||0,
+        description:`Desafio concluído: ${c.title}`, relatedId:c.id, date:today}, `${c.id}:challenge_reward`);
     } else if(today > c.endDate){
       await updateDoc(doc(db,'challenges',c.id), {status:'failed', currentCount:count});
       c.status='failed';
@@ -702,61 +822,85 @@ async function evaluateChallenges(){
 }
 
 /* =========================================================
-   AÇÕES DE EXECUÇÃO (concluir / não cumprir / pular)
+   AÇÕES DE EXECUÇÃO (concluir / não cumprir / pular) + DESFAZER
    ========================================================= */
 async function completeRecord(record, measuredValue){
+  if(record.status!=='pending') return;   // impede dupla conclusão/recompensa
   let ratio = 1;
   if(record.measurementType!=='boolean' && record.targetValue){
     ratio = Math.max(0, Math.min(1, (Number(measuredValue)||0)/record.targetValue));
   }
   const reward = record.measurementType==='boolean' ? (record.rewardSnapshot||0) : (record.rewardSnapshot||0)*ratio;
   const status = (record.measurementType==='boolean' || ratio>0) ? 'completed' : 'failed';
-  const amountApplied = status==='completed' ? reward : -(record.penaltySnapshot||0);
-  await updateDoc(doc(db,'goalRecords',record.id), {
-    status, measuredValue: measuredValue==null?null:Number(measuredValue), amountApplied, resolvedAt:serverTimestamp()
-  });
   const payPerson = record.personId==='both'?'couple':record.personId;
-  if(status==='completed' && reward>0){
-    await addDoc(col('transactions'), {
-      personId:payPerson, type:'goal_reward', amount:reward,
-      description:`Meta cumprida: ${record.goalTitle}${ratio<1?` (${Math.round(ratio*100)}%)`:''}`,
-      relatedId:record.id, date:record.date, createdAt:serverTimestamp()
+  const txIds=[];
+  if(status==='completed'){
+    await updateDoc(doc(db,'goalRecords',record.id), {
+      status, measuredValue: measuredValue==null?null:Number(measuredValue), amountApplied:reward, resolvedAt:serverTimestamp()
     });
-  } else if(status==='failed' && record.penaltySnapshot>0){
-    await addDoc(col('transactions'), {
-      personId:payPerson, type:'goal_penalty', amount:-record.penaltySnapshot,
-      description:`Meta não cumprida: ${record.goalTitle}`, relatedId:record.id, date:record.date, createdAt:serverTimestamp()
+    if(reward>0){
+      const id=await addTx({personId:payPerson, type:'goal_reward', amount:reward,
+        description:`Meta cumprida: ${record.goalTitle}${ratio<1?` (${Math.round(ratio*100)}%)`:''}`,
+        relatedId:record.id, date:record.date}, `${record.id}:goal_reward`);
+      if(id) txIds.push(id);
+    }
+    const goal = state.goals.find(g=>g.id===record.goalId);
+    const streakNow = record.personId==='both' ? 0 : computeStreak(record.goalId, record.personId).current + 1;
+    celebrate('win', reward, streakNow);
+    const bId = await maybeApplyStreakBonus(goal, record.personId); if(bId) txIds.push(bId);
+  } else {
+    const {amount,capped} = penaltyCapInfo(payPerson, record.penaltySnapshot||0);
+    await updateDoc(doc(db,'goalRecords',record.id), {
+      status:'failed', measuredValue: measuredValue==null?null:Number(measuredValue), amountApplied:-amount, resolvedAt:serverTimestamp()
     });
+    if((record.penaltySnapshot||0)>0){
+      const id=await addTx({personId:payPerson, type:'goal_penalty', amount:-amount,
+        description:`Meta não cumprida: ${record.goalTitle}${capped?' (limitado pelo teto)':''}`, relatedId:record.id, date:record.date}, `${record.id}:goal_penalty`);
+      if(id) txIds.push(id);
+    }
+    celebrate('fail', amount, 0);
   }
-  const goal = state.goals.find(g=>g.id===record.goalId);
-  const streakNow = record.personId==='both' ? 0 : computeStreak(record.goalId, record.personId).current + 1;
-  if(status==='completed'){ celebrate('win', reward, streakNow); await maybeApplyStreakBonus(goal, record.personId); }
-  else { celebrate('fail', record.penaltySnapshot||0, 0); }
+  registerUndo(record.id, txIds);
 }
 async function failRecord(record){
-  const penalty = record.penaltySnapshot||0;
-  celebrate('fail', penalty, 0);
-  await updateDoc(doc(db,'goalRecords',record.id), {status:'failed', amountApplied: penalty?-penalty:0, resolvedAt:serverTimestamp()});
-  if(penalty>0){
-    await addDoc(col('transactions'), {
-      personId: record.personId==='both'?'couple':record.personId, type:'goal_penalty', amount:-penalty,
-      description:`Meta não cumprida: ${record.goalTitle}`, relatedId:record.id, date:record.date, createdAt:serverTimestamp()
-    });
+  if(record.status!=='pending') return;
+  const payPerson = record.personId==='both'?'couple':record.personId;
+  const {amount,capped} = penaltyCapInfo(payPerson, record.penaltySnapshot||0);
+  celebrate('fail', amount, 0);
+  await updateDoc(doc(db,'goalRecords',record.id), {status:'failed', amountApplied: amount?-amount:0, resolvedAt:serverTimestamp()});
+  const txIds=[];
+  if((record.penaltySnapshot||0)>0){
+    const id=await addTx({personId:payPerson, type:'goal_penalty', amount:-amount,
+      description:`Meta não cumprida: ${record.goalTitle}${capped?' (limitado pelo teto)':''}`, relatedId:record.id, date:record.date}, `${record.id}:goal_penalty`);
+    if(id) txIds.push(id);
   }
+  registerUndo(record.id, txIds);
 }
 async function skipRecord(record){
+  if(record.status!=='pending') return;
   await updateDoc(doc(db,'goalRecords',record.id), {status:'skipped', amountApplied:0, resolvedAt:serverTimestamp()});
+  registerUndo(record.id, []);
+}
+function registerUndo(recordId, txIds){
+  state.lastAction = { recordId, txIds, at:Date.now() };
+  showUndoToast();
+}
+async function performUndo(){
+  const a = state.lastAction; if(!a) return;
+  state.lastAction = null;
+  for(const id of a.txIds){ try{ await deleteDoc(doc(db,'transactions',id)); }catch(e){} }
+  try{ await updateDoc(doc(db,'goalRecords',a.recordId), {status:'pending', measuredValue:null, amountApplied:null, resolvedAt:null}); }catch(e){}
+  toast('Ação desfeita ↩️');
 }
 async function maybeApplyStreakBonus(goal, personId){
-  if(!goal?.streakBonus?.enabled) return;
+  if(!goal?.streakBonus?.enabled) return null;
   const streak = computeStreak(goal.id, personId).current;
   const everyN = Number(goal.streakBonus.everyN)||7;
   if(streak>0 && streak % everyN === 0){
-    await addDoc(col('transactions'), {
-      personId: personId==='both'?'couple':personId, type:'streak_bonus', amount:Number(goal.streakBonus.amount)||0,
-      description:`Bônus de sequência (${streak} dias): ${goal.title}`, relatedId:goal.id, date:todayStr(), createdAt:serverTimestamp()
-    });
+    return await addTx({personId: personId==='both'?'couple':personId, type:'streak_bonus', amount:Number(goal.streakBonus.amount)||0,
+      description:`Bônus de sequência (${streak} dias): ${goal.title}`, relatedId:goal.id, date:todayStr()}, `${goal.id}:${todayStr()}:streak_bonus`);
   }
+  return null;
 }
 function computeStreak(goalId, personId){
   const completedDates = new Set(state.records.filter(r=>r.goalId===goalId && r.personId===personId && r.status==='completed').map(r=>r.date));
@@ -793,14 +937,17 @@ function balance(personId){
    LOJA: compra e disponibilidade
    ========================================================= */
 function productAvailability(product){
-  if((product.stockQuantity||0)<=0) return {available:false, reason:'Sem estoque'};
+  const unlimited = product.stockQuantity==null;
+  if(!unlimited && (product.stockQuantity||0)<=0) return {available:false, reason:'Esgotado'};
   const rel = state.purchases.filter(p=>p.productId===product.id).sort((a,b)=>(b.purchasedAt||'').localeCompare(a.purchasedAt||''));
   const last = rel[0];
   if(last && last.availableAgainAt > todayStr()) return {available:false, reason:`Volta em ${fmtDatePt(last.availableAgainAt)}`};
   return {available:true};
 }
 async function purchaseProduct(product, personId){
-  await updateDoc(doc(db,'products',product.id), {stockQuantity:(product.stockQuantity||0)-1});
+  if(product.stockQuantity!=null){
+    await updateDoc(doc(db,'products',product.id), {stockQuantity:(product.stockQuantity||0)-1});
+  }
   const availableAgain = addDays(todayStr(), product.cooldownDays||0);
   await addDoc(col('purchases'), {
     productId:product.id, productName:product.name, personId, price:Number(product.price)||0,
@@ -842,6 +989,7 @@ function personEmoji(id){
 function render(){
   renderGreeting();
   renderCoupleBand();
+  renderDeviceUser();
   if(state.activeTab==='agenda') renderAgenda();
   if(state.activeTab==='metas') renderMetas();
   if(state.activeTab==='loja') renderLoja();
@@ -918,6 +1066,22 @@ function renderAgenda(){
     {key:'both', label:'Metas do casal', emoji:'❤️'},
   ];
   let html='';
+  // aviso de lembretes: metas com lembrete cujo horário já passou e ainda estão pendentes hoje
+  if(dateStr===todayStr()){
+    const nowT = nowHHMM();
+    const dueGoalTitles = [];
+    const seen = new Set();
+    for(const r of dayRecords){
+      if(r.status!=='pending') continue;
+      const g = state.goals.find(x=>x.id===r.goalId);
+      if(g && g.reminderEnabled && (g.reminderTime||'') <= nowT){
+        if(!seen.has(r.goalTitle)){ seen.add(r.goalTitle); dueGoalTitles.push(r.goalTitle); }
+      }
+    }
+    if(dueGoalTitles.length){
+      html += `<div class="reminder-banner"><span class="rb-emoji">🔔</span><div>Não esqueçam: ${dueGoalTitles.slice(0,5).join(', ')}${dueGoalTitles.length>5?'…':''}</div></div>`;
+    }
+  }
   for(const g of groups){
     const recs = dayRecords.filter(r=>r.personId===g.key).sort((a,b)=>(a.goalTitle||'').localeCompare(b.goalTitle||''));
     if(recs.length===0) continue;
@@ -1007,15 +1171,20 @@ function periodicityLabel(p){
   if(p.type==='weekly_count') return `${p.timesPerWeek||1}x por semana`;
   if(p.type==='monthly_count') return `${p.timesPerMonth||1}x por mês`;
   if(p.type==='custom_interval') return `A cada ${p.intervalDays||1} dia(s)`;
+  if(p.type==='yearly_count') return `${p.timesPerYear||1}x por ano`;
+  if(p.type==='specific_date') return `Em ${p.date? fmtDatePt(p.date):'—'}`;
   return '';
 }
 function renderMetas(){
   const el = document.getElementById('goalsList');
-  if(state.goals.length===0){
-    el.innerHTML = `<div class="empty-state"><span class="em">🎯</span>Nenhuma meta ainda.<br><span class="muted">Toque em "+ Nova meta" para criar a primeira.</span></div>`;
+  const visibleGoals = state.goals.filter(g=>!g.archived);
+  const archivedCount = state.goals.length - visibleGoals.length;
+  if(visibleGoals.length===0){
+    el.innerHTML = `<div class="empty-state"><span class="em">🎯</span>Nenhuma meta ativa.<br><span class="muted">Comece pela biblioteca com várias metas prontas.</span><br><br><button class="btn btn-primary" onclick="window.__lib('goals')">✨ Abrir biblioteca</button></div>`
+      + (archivedCount?`<div style="text-align:center;margin-top:12px;"><button class="btn btn-ghost btn-sm" onclick="window.__archived('goals')">🗄️ Ver arquivadas (${archivedCount})</button></div>`:'');
     return;
   }
-  const sorted = [...state.goals].sort((a,b)=> (b.active!==false)-(a.active!==false) || (a.title||'').localeCompare(b.title||''));
+  const sorted = [...visibleGoals].sort((a,b)=> (b.active!==false)-(a.active!==false) || (a.title||'').localeCompare(b.title||''));
   el.innerHTML = sorted.map(g=>{
     const part = g.participant==='both' ? `Casal (${g.responsibilityType==='either'?'basta um cumprir':'cada um cumpre a sua'})` : personLabel(g.participant);
     return `
@@ -1027,25 +1196,27 @@ function renderMetas(){
         </div>
         <div class="btn-row">
           <button class="btn btn-ghost btn-sm" data-edit-goal="${g.id}">✏️</button>
-          <button class="btn btn-ghost btn-sm" data-del-goal="${g.id}">🗑️</button>
+          <button class="btn btn-ghost btn-sm" data-arch-goal="${g.id}">🗄️</button>
         </div>
       </div>
       <div>
         ${g.reward?.enabled ? `<span class="chip">+${fmtMoney(g.reward.amount)}</span>` : ''}
         ${g.penalty?.enabled ? `<span class="chip">-${fmtMoney(g.penalty.amount)}</span>` : ''}
         ${g.streakBonus?.enabled ? `<span class="chip">🔥 bônus a cada ${g.streakBonus.everyN} dias</span>` : ''}
-        <span class="chip">${g.measurementType==='boolean'?'Sim/Não':g.measurementType}</span>
-        ${g.active===false ? `<span class="chip">Pausada</span>` : ''}
+        ${g.reminderEnabled ? `<span class="chip neutral">🔔 ${g.reminderTime||''}</span>` : ''}
+        <span class="chip neutral">${g.measurementType==='boolean'?'Sim/Não':g.measurementType}</span>
+        ${g.active===false ? `<span class="chip neutral">Pausada</span>` : ''}
       </div>
       <div class="btn-row" style="margin-top:8px;">
         <button class="btn btn-ghost btn-sm" data-toggle-goal="${g.id}">${g.active===false?'Reativar':'Pausar'}</button>
       </div>
     </div>`;
-  }).join('');
+  }).join('')
+   + (archivedCount?`<div style="text-align:center;margin-top:8px;"><button class="btn btn-ghost btn-sm" onclick="window.__archived('goals')">🗄️ Arquivadas (${archivedCount})</button></div>`:'');
 
   el.querySelectorAll('[data-edit-goal]').forEach(b=>b.addEventListener('click', ()=>openGoalModal(state.goals.find(g=>g.id===b.dataset.editGoal))));
-  el.querySelectorAll('[data-del-goal]').forEach(b=>b.addEventListener('click', async ()=>{
-    if(confirm('Excluir esta meta? O histórico de execuções será mantido.')) await deleteDoc(doc(db,'goals',b.dataset.delGoal));
+  el.querySelectorAll('[data-arch-goal]').forEach(b=>b.addEventListener('click', async ()=>{
+    if(confirm('Arquivar esta meta? Ela para de gerar novas ocorrências, mas o histórico é mantido. Dá pra restaurar depois.')) await updateDoc(doc(db,'goals',b.dataset.archGoal), {archived:true, active:false});
   }));
   el.querySelectorAll('[data-toggle-goal]').forEach(b=>b.addEventListener('click', async ()=>{
     const g = state.goals.find(x=>x.id===b.dataset.toggleGoal);
@@ -1056,10 +1227,12 @@ function renderMetas(){
 /* ---- LOJA ---- */
 function renderLoja(){
   const el = document.getElementById('productsList');
-  if(state.products.length===0){
-    el.innerHTML = `<div class="empty-state"><span class="em">🛍️</span>Nenhuma recompensa cadastrada ainda.</div>`;
+  const visible = state.products.filter(p=>!p.archived);
+  const archivedCount = state.products.length - visible.length;
+  if(visible.length===0){
+    el.innerHTML = `<div class="empty-state"><span class="em">🎁</span>Nenhuma recompensa ainda.<br><span class="muted">A biblioteca já tem várias prontas pra vocês.</span><br><br><button class="btn btn-primary" onclick="window.__lib('products')">✨ Abrir biblioteca</button></div>`;
   } else {
-    el.innerHTML = state.products.map(p=>{
+    el.innerHTML = visible.map(p=>{
       const av = productAvailability(p);
       return `
       <div class="product-card">
@@ -1067,23 +1240,24 @@ function renderLoja(){
         <div class="p-body">
           <div class="p-title">${p.name}</div>
           ${p.description?`<div class="p-desc">${p.description}</div>`:''}
-          <div class="p-meta">${fmtMoney(p.price)} · estoque: ${p.stockQuantity ?? 0} · cooldown: ${p.cooldownDays||0}d</div>
+          <div class="p-meta">${fmtMoney(p.price)} · ${p.stockQuantity==null?'repõe':'estoque: '+(p.stockQuantity??0)} · reposição: ${p.cooldownDays||0}d</div>
           ${!av.available?`<div class="p-meta" style="color:var(--danger)">${av.reason}</div>`:''}
         </div>
         <div class="p-actions">
           <button class="btn btn-primary btn-sm" data-buy="${p.id}" ${av.available?'':'disabled'}>Comprar</button>
           <div class="btn-row">
             <button class="btn btn-ghost btn-sm" data-edit-prod="${p.id}">✏️</button>
-            <button class="btn btn-ghost btn-sm" data-del-prod="${p.id}">🗑️</button>
+            <button class="btn btn-ghost btn-sm" data-arch-prod="${p.id}">🗄️</button>
           </div>
         </div>
       </div>`;
-    }).join('');
+    }).join('')
+     + (archivedCount?`<div style="text-align:center;margin-top:8px;"><button class="btn btn-ghost btn-sm" onclick="window.__archived('products')">🗄️ Arquivadas (${archivedCount})</button></div>`:'');
   }
   el.querySelectorAll('[data-buy]').forEach(b=>b.addEventListener('click', ()=>openPurchaseModal(state.products.find(p=>p.id===b.dataset.buy))));
   el.querySelectorAll('[data-edit-prod]').forEach(b=>b.addEventListener('click', ()=>openProductModal(state.products.find(p=>p.id===b.dataset.editProd))));
-  el.querySelectorAll('[data-del-prod]').forEach(b=>b.addEventListener('click', async ()=>{
-    if(confirm('Excluir este produto?')) await deleteDoc(doc(db,'products',b.dataset.delProd));
+  el.querySelectorAll('[data-arch-prod]').forEach(b=>b.addEventListener('click', async ()=>{
+    if(confirm('Arquivar esta recompensa? Ela some da loja, mas o histórico de compras é mantido. Dá pra restaurar depois.')) await updateDoc(doc(db,'products',b.dataset.archProd), {archived:true});
   }));
 
   const ledgerEl = document.getElementById('ledgerList');
@@ -1146,68 +1320,122 @@ function renderDesafios(){
 }
 
 /* ---- DASHBOARD ---- */
+function daysBetweenStr(from,to){ return Math.round((new Date(to)-new Date(from))/86400000); }
+function rangeForPeriod(){
+  const today=todayStr();
+  const p=state.dashPeriod||'week';
+  if(p==='today') return [today, today];
+  if(p==='week') return [addDays(today,-6), today];
+  if(p==='month') return [today.slice(0,7)+'-01', today];
+  if(p==='year') return [today.slice(0,4)+'-01-01', today];
+  if(p==='custom'){ const c=state.dashCustom||{}; const a=c.from||today, b=c.to||today; return a<=b?[a,b]:[b,a]; }
+  return [addDays(today,-6), today];
+}
+function periodTitle(){
+  const today=todayStr();
+  const p=state.dashPeriod||'week';
+  if(p==='today') return 'Hoje';
+  if(p==='week') return 'Últimos 7 dias';
+  if(p==='month') return `${MONTH_LABELS[Number(today.slice(5,7))-1]} de ${today.slice(0,4)}`;
+  if(p==='year') return `Ano de ${today.slice(0,4)}`;
+  if(p==='custom'){ const [a,b]=rangeForPeriod(); return `${fmtDatePt(a)} — ${fmtDatePt(b)}`; }
+  return '';
+}
+function buildBuckets(from,to){
+  const n = daysBetweenStr(from,to)+1;
+  const mode = n<=14 ? 'day' : (n<=92 ? 'week' : 'month');
+  const map=new Map(); const order=[];
+  for(let i=0;i<n;i++){
+    const d=addDays(from,i);
+    let key,label;
+    if(mode==='day'){ key=d; label=`${d.slice(8,10)}/${d.slice(5,7)}`; }
+    else if(mode==='week'){ key=isoWeekKey(d); label=key.slice(6); }
+    else { key=d.slice(0,7); label=MONTH_LABELS[Number(key.slice(5,7))-1].slice(0,3); }
+    if(!map.has(key)){ map.set(key,{label,done:0,total:0}); order.push(key); }
+  }
+  for(const r of state.records){
+    if(r.date<from || r.date>to) continue;
+    let key;
+    if(mode==='day') key=r.date;
+    else if(mode==='week') key=isoWeekKey(r.date);
+    else key=r.date.slice(0,7);
+    const b=map.get(key); if(!b) continue;
+    b.total++; if(r.status==='completed') b.done++;
+  }
+  return order.map(k=>map.get(k));
+}
 function renderDashboard(){
-  const today = todayStr();
-  // Hoje
-  const todayRecs = state.records.filter(r=>r.date===today);
-  const pctFor = (pid)=>{
-    const rs = todayRecs.filter(r=>r.personId===pid);
-    return rs.length ? Math.round(rs.filter(r=>r.status==='completed').length/rs.length*100) : 0;
-  };
-  document.getElementById('dashToday').innerHTML = `
-    <div class="stat-card"><div class="val" style="color:var(--p1)">${pctFor('p1')}%</div><div class="lbl">${personLabel('p1')} concluído hoje</div></div>
-    <div class="stat-card"><div class="val" style="color:var(--p2)">${pctFor('p2')}%</div><div class="lbl">${personLabel('p2')} concluído hoje</div></div>
-  `;
+  // barra de período
+  const periods=[['today','Hoje'],['week','Semana'],['month','Mês'],['year','Ano'],['custom','Personalizado']];
+  const cur=state.dashPeriod||'week';
+  document.getElementById('dashPeriodBar').innerHTML = periods.map(([k,l])=>`<button data-period="${k}" class="${cur===k?'active':''}">${l}</button>`).join('');
+  document.getElementById('dashPeriodBar').querySelectorAll('[data-period]').forEach(b=>b.addEventListener('click',()=>{ state.dashPeriod=b.dataset.period; render(); }));
 
-  // Semana (últimos 7 dias)
-  const days = Array.from({length:7}, (_,i)=>addDays(today, i-6));
-  const dayCounts = days.map(d=>{
-    const rs = state.records.filter(r=>r.date===d);
-    const done = rs.filter(r=>r.status==='completed').length;
-    return {d, total:rs.length, done};
-  });
-  const maxVal = Math.max(1, ...dayCounts.map(x=>x.total));
-  const barW=36, gap=10, chartH=90, chartW=days.length*(barW+gap);
-  let bars='';
-  dayCounts.forEach((x,i)=>{
-    const h = Math.round((x.total? x.done/maxVal : 0)*chartH);
-    const totalH = Math.round((x.total/maxVal)*chartH);
-    const xPos = i*(barW+gap);
-    bars += `<rect x="${xPos}" y="${chartH-totalH}" width="${barW}" height="${totalH}" rx="6" fill="rgba(58,44,80,0.10)"></rect>`;
-    bars += `<rect x="${xPos}" y="${chartH-h}" width="${barW}" height="${h}" rx="6" fill="var(--accent)"></rect>`;
-    bars += `<text x="${xPos+barW/2}" y="${chartH+14}" text-anchor="middle">${DOW_LABELS[dayOfWeek(x.d)]}</text>`;
-    bars += `<text x="${xPos+barW/2}" y="${chartH-h-4}" text-anchor="middle" style="font-weight:700;fill:var(--ink)">${x.done}</text>`;
-  });
-  document.getElementById('dashWeekChart').innerHTML = `<svg class="chart" viewBox="0 0 ${chartW} ${chartH+22}" width="100%" height="120">${bars}</svg>`;
+  const crEl=document.getElementById('dashCustomRange');
+  if(cur==='custom'){
+    const c=state.dashCustom||{}; const today=todayStr();
+    crEl.innerHTML=`<div class="custom-range">
+      <div class="field"><label>De</label><input type="date" id="cr-from" value="${c.from||addDays(today,-30)}"></div>
+      <div class="field"><label>Até</label><input type="date" id="cr-to" value="${c.to||today}"></div>
+    </div>`;
+    const upd=()=>{ state.dashCustom={from:document.getElementById('cr-from').value, to:document.getElementById('cr-to').value}; render(); };
+    document.getElementById('cr-from').addEventListener('change',upd);
+    document.getElementById('cr-to').addEventListener('change',upd);
+  } else crEl.innerHTML='';
 
-  // Mês
-  const monthKey = today.slice(0,7);
-  document.getElementById('dashMonthLabel').textContent = `${MONTH_LABELS[Number(monthKey.slice(5,7))-1]} de ${monthKey.slice(0,4)}`;
-  const monthRecs = state.records.filter(r=>r.date.slice(0,7)===monthKey && r.status!=='pending');
-  const monthTx = state.transactions.filter(t=>t.date.slice(0,7)===monthKey);
-  const completedCount = monthRecs.filter(r=>r.status==='completed').length;
-  const taxaSucesso = monthRecs.length ? Math.round(completedCount/monthRecs.length*100) : 0;
-  const ganho = monthTx.filter(t=>t.amount>0 && t.type!=='purchase').reduce((s,t)=>s+t.amount,0);
-  const penal = monthTx.filter(t=>t.type==='goal_penalty').reduce((s,t)=>s+t.amount,0);
-  const compras = monthTx.filter(t=>t.type==='purchase').reduce((s,t)=>s+t.amount,0);
-  document.getElementById('dashMonth').innerHTML = `
-    <div class="stat-card"><div class="val">${completedCount}</div><div class="lbl">Metas concluídas</div></div>
-    <div class="stat-card"><div class="val">${taxaSucesso}%</div><div class="lbl">Taxa de sucesso</div></div>
-    <div class="stat-card"><div class="val" style="color:var(--p1)">${fmtMoney(ganho)}</div><div class="lbl">Ganho no mês</div></div>
+  document.getElementById('dashPeriodLabel').textContent = periodTitle();
+
+  const [from,to]=rangeForPeriod();
+  const rangeRecs = state.records.filter(r=>r.date>=from && r.date<=to && !String(r.id).startsWith('temp-'));
+  const resolved = rangeRecs.filter(r=>r.status!=='pending');
+  const done = resolved.filter(r=>r.status==='completed').length;
+  const failed = resolved.filter(r=>r.status==='failed'||r.status==='expired').length;
+  const skipped = resolved.filter(r=>r.status==='skipped').length;
+  const taxa = resolved.length ? Math.round(done/resolved.length*100) : 0;
+  const rangeTx = state.transactions.filter(t=>t.date>=from && t.date<=to);
+  const ganho = rangeTx.filter(t=>t.amount>0 && t.type!=='purchase').reduce((s,t)=>s+t.amount,0);
+  const penal = rangeTx.filter(t=>t.type==='goal_penalty').reduce((s,t)=>s+t.amount,0);
+  const gasto = rangeTx.filter(t=>t.type==='purchase').reduce((s,t)=>s+t.amount,0);
+
+  document.getElementById('dashStats').innerHTML = `
+    <div class="stat-card"><div class="val" style="color:var(--ok)">${done}</div><div class="lbl">Concluídas</div></div>
+    <div class="stat-card"><div class="val" style="color:var(--danger)">${failed}</div><div class="lbl">Não cumpridas</div></div>
+    <div class="stat-card"><div class="val">${skipped}</div><div class="lbl">Puladas</div></div>
+    <div class="stat-card"><div class="val">${taxa}%</div><div class="lbl">Taxa de sucesso</div></div>
+    <div class="stat-card"><div class="val" style="color:var(--ok)">${fmtMoney(ganho)}</div><div class="lbl">Ganho</div></div>
     <div class="stat-card"><div class="val" style="color:var(--danger)">${fmtMoney(penal)}</div><div class="lbl">Penalidades</div></div>
-    <div class="stat-card"><div class="val">${fmtMoney(Math.abs(compras))}</div><div class="lbl">Gasto na loja</div></div>
-    <div class="stat-card"><div class="val">🔥 ${bestOverallStreak()}</div><div class="lbl">Melhor sequência geral</div></div>
+    <div class="stat-card"><div class="val">${fmtMoney(Math.abs(gasto))}</div><div class="lbl">Gasto na loja</div></div>
+    <div class="stat-card"><div class="val">🔥 ${bestOverallStreak()}</div><div class="lbl">Melhor sequência</div></div>
   `;
 
-  // Comparação
+  // gráfico adaptativo
+  const buckets = buildBuckets(from,to);
+  const maxVal = Math.max(1, ...buckets.map(x=>x.total));
+  const barW=Math.max(18, Math.min(40, Math.floor(300/Math.max(1,buckets.length))-10)), gap=10, chartH=90;
+  const chartW=buckets.length*(barW+gap);
+  let bars='';
+  buckets.forEach((x,i)=>{
+    const h=Math.round((x.total? x.done/maxVal:0)*chartH);
+    const totalH=Math.round((x.total/maxVal)*chartH);
+    const xPos=i*(barW+gap);
+    bars += `<rect x="${xPos}" y="${chartH-totalH}" width="${barW}" height="${totalH}" rx="5" fill="rgba(58,44,80,0.10)"></rect>`;
+    bars += `<rect x="${xPos}" y="${chartH-h}" width="${barW}" height="${h}" rx="5" fill="var(--accent)"></rect>`;
+    bars += `<text x="${xPos+barW/2}" y="${chartH+14}" text-anchor="middle" style="font-size:8px">${x.label}</text>`;
+    if(x.done>0) bars += `<text x="${xPos+barW/2}" y="${chartH-h-4}" text-anchor="middle" style="font-weight:700;fill:var(--ink);font-size:9px">${x.done}</text>`;
+  });
+  document.getElementById('dashChart').innerHTML = buckets.length
+    ? `<svg class="chart" viewBox="0 0 ${Math.max(chartW,10)} ${chartH+22}" width="100%" height="120" preserveAspectRatio="xMidYMid meet">${bars}</svg>`
+    : `<p class="muted" style="text-align:center;padding:10px;">Sem dados no período.</p>`;
+
+  // comparação no período
   const cmp = (pid)=>{
-    const recs = monthRecs.filter(r=>r.personId===pid);
-    const done = recs.filter(r=>r.status==='completed').length;
-    const g = monthTx.filter(t=>t.personId===pid && t.amount>0 && t.type!=='purchase').reduce((s,t)=>s+t.amount,0);
-    const p = monthTx.filter(t=>t.personId===pid && t.type==='goal_penalty').reduce((s,t)=>s+t.amount,0);
+    const recs = resolved.filter(r=>r.personId===pid);
+    const d = recs.filter(r=>r.status==='completed').length;
+    const g = rangeTx.filter(t=>t.personId===pid && t.amount>0 && t.type!=='purchase').reduce((s,t)=>s+t.amount,0);
+    const pen = rangeTx.filter(t=>t.personId===pid && t.type==='goal_penalty').reduce((s,t)=>s+t.amount,0);
     let bestStreak=0;
     state.goals.filter(gl=>gl.participant===pid || gl.participant==='both').forEach(gl=>{ bestStreak=Math.max(bestStreak, computeStreak(gl.id, gl.participant==='both'&&gl.responsibilityType==='either'?'both':pid).current); });
-    return {total:recs.length, done, pct: recs.length?Math.round(done/recs.length*100):0, g, p, bestStreak};
+    return {total:recs.length, done:d, pct: recs.length?Math.round(d/recs.length*100):0, g, p:pen, bestStreak};
   };
   const c1=cmp('p1'), c2=cmp('p2');
   document.getElementById('dashCompare').innerHTML = `
@@ -1221,7 +1449,6 @@ function renderDashboard(){
       <tr><td>Streak atual</td><td>🔥 ${c1.bestStreak}</td><td>🔥 ${c2.bestStreak}</td></tr>
     </table>`;
 
-  // Badges
   document.getElementById('dashBadges').innerHTML = BADGE_DEFS.map(b=>{
     const unlocked = b.check();
     return `<div class="badge-tile ${unlocked?'':'locked'}"><div class="b-emoji">${b.emoji}</div><div class="b-title">${b.title}</div></div>`;
@@ -1231,7 +1458,6 @@ function renderDashboard(){
 /* =========================================================
    MODAIS
    ========================================================= */
-const modalRoot = document.getElementById('modalRoot');
 function closeModal(){ modalRoot.innerHTML=''; }
 function openModalHtml(innerHtml){
   modalRoot.innerHTML = `<div class="modal-overlay" id="ovl"><div class="modal-box">${innerHtml}</div></div>`;
@@ -1244,26 +1470,87 @@ document.getElementById('settingsBtn').addEventListener('click', ()=>{
   openModalHtml(`
     <button class="modal-close" id="mClose">×</button>
     <h3>Configurações</h3>
-    <div class="field"><label>Nome do casal / app</label><input type="text" id="cf-couple" value="${s.coupleName||'Metinhas'}"></div>
+    <div class="field"><label>Nome do casal / app</label><input type="text" id="cf-couple" value="${s.coupleName||'Metinhas dos Nenéns'}"></div>
     <div class="field-row">
       <div class="field"><label>Nome pessoa 1</label><input type="text" id="cf-p1name" value="${s.p1?.name||'Você'}"></div>
-      <div class="field" style="max-width:70px;"><label>Emoji</label><input type="text" id="cf-p1emoji" value="${s.p1?.emoji||'🧑'}"></div>
+      <div class="field" style="max-width:66px;"><label>Emoji</label><input type="text" id="cf-p1emoji" value="${s.p1?.emoji||'🐻'}"></div>
+      <div class="field" style="max-width:86px;"><label>PIN (opc.)</label><input type="text" inputmode="numeric" maxlength="4" id="cf-p1pin" value="${s.p1?.pin||''}"></div>
     </div>
     <div class="field-row">
       <div class="field"><label>Nome pessoa 2</label><input type="text" id="cf-p2name" value="${s.p2?.name||'Ela'}"></div>
-      <div class="field" style="max-width:70px;"><label>Emoji</label><input type="text" id="cf-p2emoji" value="${s.p2?.emoji||'👩'}"></div>
+      <div class="field" style="max-width:66px;"><label>Emoji</label><input type="text" id="cf-p2emoji" value="${s.p2?.emoji||'🐰'}"></div>
+      <div class="field" style="max-width:86px;"><label>PIN (opc.)</label><input type="text" inputmode="numeric" maxlength="4" id="cf-p2pin" value="${s.p2?.pin||''}"></div>
     </div>
     <div class="field"><label>Símbolo da moeda</label><input type="text" id="cf-currency" value="${s.currency||'R$'}"></div>
+
+    <div class="fieldset-label">Regras financeiras</div>
+    <div class="checkline"><input type="checkbox" id="cf-neg" ${s.allowNegative!==false?'checked':''}><label for="cf-neg">Permitir saldo negativo</label></div>
+    <div class="field"><label>Teto diário de penalidade (0 = sem limite)</label><input type="number" step="0.01" id="cf-pnlimit" value="${s.dailyPenaltyLimit||0}"></div>
     <button class="btn btn-primary btn-block" id="cf-save">Salvar</button>
+
+    <div class="fieldset-label" style="margin-top:20px;">Ajuste manual de saldo (admin)</div>
+    <div class="field-row">
+      <div class="field"><label>Quem</label><select id="adj-person">
+        <option value="p1">${personEmoji('p1')} ${s.p1?.name||'Você'}</option>
+        <option value="p2">${personEmoji('p2')} ${s.p2?.name||'Ela'}</option>
+        <option value="couple">❤️ Casal</option>
+      </select></div>
+      <div class="field"><label>Valor (+ ou −)</label><input type="number" step="0.01" id="adj-amount" placeholder="ex: 20 ou -10"></div>
+    </div>
+    <div class="field"><label>Motivo</label><input type="text" id="adj-reason" placeholder="ex: correção"></div>
+    <button class="btn btn-block" id="adj-apply">Aplicar ajuste</button>
+
+    <div class="fieldset-label" style="margin-top:20px;">Ferramentas de admin</div>
+    <div class="btn-row">
+      <button class="btn btn-sm" id="admin-stock">📦 Corrigir estoque</button>
+      <button class="btn btn-sm" id="admin-tx">🧾 Todas as transações</button>
+    </div>
+
+    <div class="danger-zone">
+      <div class="dz-title">⚠️ Zona de reset</div>
+      <p>O reset apaga o histórico de execuções, todas as transações e compras, zerando o saldo dos dois. As metas e recompensas continuam salvas.</p>
+      <button class="btn btn-outline-danger" id="reset-history">🔄 Zerar histórico e dinheiro</button>
+      <p>Apagar tudo remove também as metas, recompensas e desafios (recomeço do zero).</p>
+      <button class="btn btn-outline-danger" id="reset-all">🗑️ Apagar tudo</button>
+    </div>
   `);
   document.getElementById('mClose').onclick = closeModal;
+  document.getElementById('admin-stock').onclick = openStockAdmin;
+  document.getElementById('admin-tx').onclick = ()=>openTxAdmin('all');
+  document.getElementById('adj-apply').onclick = async ()=>{
+    const person = document.getElementById('adj-person').value;
+    const amount = Number(document.getElementById('adj-amount').value);
+    const reason = document.getElementById('adj-reason').value.trim() || 'Ajuste manual';
+    if(!amount){ alert('Informe um valor diferente de zero.'); return; }
+    await addTx({ personId:person, type:'manual_adjustment', amount, description:`Ajuste manual: ${reason}`, date:todayStr() });
+    toast('Ajuste aplicado ✅');
+    document.getElementById('adj-amount').value=''; document.getElementById('adj-reason').value='';
+  };
+  document.getElementById('reset-history').onclick = async ()=>{
+    if(!confirm('Tem certeza? Isso vai zerar TODO o histórico e o dinheiro dos dois. As metas e recompensas serão mantidas. Não dá pra desfazer.')) return;
+    const btn=document.getElementById('reset-history'); btn.textContent='Zerando…'; btn.disabled=true;
+    await resetData('history');
+    closeModal(); toast('Histórico e dinheiro zerados ✨');
+  };
+  document.getElementById('reset-all').onclick = async ()=>{
+    if(!confirm('APAGAR TUDO? Metas, recompensas, desafios, histórico e dinheiro serão removidos. Não dá pra desfazer.')) return;
+    if(!confirm('Confirma mesmo? Essa ação é permanente.')) return;
+    const btn=document.getElementById('reset-all'); btn.textContent='Apagando…'; btn.disabled=true;
+    await resetData('all');
+    closeModal(); toast('Tudo apagado. Recomeço do zero ❤️');
+  };
   document.getElementById('cf-save').onclick = async ()=>{
-    await setDoc(doc(db,'settings','config'), {
-      coupleName: document.getElementById('cf-couple').value.trim()||'Metinhas',
-      p1:{ name: document.getElementById('cf-p1name').value.trim()||'Você', emoji: document.getElementById('cf-p1emoji').value.trim()||'🧑' },
-      p2:{ name: document.getElementById('cf-p2name').value.trim()||'Ela', emoji: document.getElementById('cf-p2emoji').value.trim()||'👩' },
+    const merged = {
+      ...state.settings,
+      coupleName: document.getElementById('cf-couple').value.trim()||'Metinhas dos Nenéns',
+      p1:{ name: document.getElementById('cf-p1name').value.trim()||'Você', emoji: document.getElementById('cf-p1emoji').value.trim()||'🐻', pin: document.getElementById('cf-p1pin').value.trim() },
+      p2:{ name: document.getElementById('cf-p2name').value.trim()||'Ela', emoji: document.getElementById('cf-p2emoji').value.trim()||'🐰', pin: document.getElementById('cf-p2pin').value.trim() },
       currency: document.getElementById('cf-currency').value.trim()||'R$',
-    });
+      allowNegative: document.getElementById('cf-neg').checked,
+      dailyPenaltyLimit: Number(document.getElementById('cf-pnlimit').value)||0,
+      configured: true,
+    };
+    await setDoc(doc(db,'settings','config'), merged);
     closeModal();
   };
 });
@@ -1324,12 +1611,16 @@ function openGoalModal(goal){
         <option value="weekly_count" ${per.type==='weekly_count'?'selected':''}>X vezes por semana</option>
         <option value="monthly_count" ${per.type==='monthly_count'?'selected':''}>X vezes por mês</option>
         <option value="custom_interval" ${per.type==='custom_interval'?'selected':''}>Intervalo personalizado</option>
+        <option value="yearly_count" ${per.type==='yearly_count'?'selected':''}>X vezes por ano</option>
+        <option value="specific_date" ${per.type==='specific_date'?'selected':''}>Data específica</option>
       </select>
     </div>
     <div class="field" id="g-p-days" style="${per.type==='weekly_days'?'':'display:none'}"><div class="daychecks">${dayChecks}</div></div>
     <div class="field" id="g-p-weekcount" style="${per.type==='weekly_count'?'':'display:none'}"><label>Vezes por semana</label><input type="number" id="g-timesweek" value="${per.timesPerWeek||3}" min="1" max="7"></div>
     <div class="field" id="g-p-monthcount" style="${per.type==='monthly_count'?'':'display:none'}"><label>Vezes por mês</label><input type="number" id="g-timesmonth" value="${per.timesPerMonth||4}" min="1"></div>
     <div class="field" id="g-p-interval" style="${per.type==='custom_interval'?'':'display:none'}"><label>Intervalo (dias)</label><input type="number" id="g-interval" value="${per.intervalDays||2}" min="1"></div>
+    <div class="field" id="g-p-yearcount" style="${per.type==='yearly_count'?'':'display:none'}"><label>Vezes por ano</label><input type="number" id="g-timesyear" value="${per.timesPerYear||1}" min="1"></div>
+    <div class="field" id="g-p-date" style="${per.type==='specific_date'?'':'display:none'}"><label>Data</label><input type="date" id="g-date" value="${per.date||todayStr()}"></div>
 
     <div class="fieldset-label">Economia da meta</div>
     <div class="checkline"><input type="checkbox" id="g-rw-en" ${(!goal||goal.reward?.enabled!==false)?'checked':''}><label for="g-rw-en">Dar recompensa ao cumprir</label></div>
@@ -1342,6 +1633,10 @@ function openGoalModal(goal){
       <div class="field"><label>Valor do bônus</label><input type="number" step="0.01" id="g-sb-amt" value="${goal?.streakBonus?.amount??20}"></div>
     </div>
 
+    <div class="fieldset-label">Lembrete</div>
+    <div class="checkline"><input type="checkbox" id="g-rem-en" ${goal?.reminderEnabled?'checked':''}><label for="g-rem-en">Lembrar desta meta</label></div>
+    <div class="field"><label>Horário do lembrete</label><input type="time" id="g-rem-time" value="${goal?.reminderTime||'20:00'}"></div>
+
     <button class="btn btn-primary btn-block" id="g-save">${isEdit?'Salvar alterações':'Criar meta'}</button>
   `);
   document.getElementById('mClose').onclick = closeModal;
@@ -1353,8 +1648,8 @@ function openGoalModal(goal){
     document.getElementById('g-target-wrap').style.display = e.target.value==='boolean' ? 'none' : '';
   });
   document.getElementById('g-ptype').addEventListener('change', (e)=>{
-    ['g-p-days','g-p-weekcount','g-p-monthcount','g-p-interval'].forEach(id=>document.getElementById(id).style.display='none');
-    const map={weekly_days:'g-p-days', weekly_count:'g-p-weekcount', monthly_count:'g-p-monthcount', custom_interval:'g-p-interval'};
+    ['g-p-days','g-p-weekcount','g-p-monthcount','g-p-interval','g-p-yearcount','g-p-date'].forEach(id=>document.getElementById(id).style.display='none');
+    const map={weekly_days:'g-p-days', weekly_count:'g-p-weekcount', monthly_count:'g-p-monthcount', custom_interval:'g-p-interval', yearly_count:'g-p-yearcount', specific_date:'g-p-date'};
     if(map[e.target.value]) document.getElementById(map[e.target.value]).style.display='';
   });
 
@@ -1370,6 +1665,8 @@ function openGoalModal(goal){
     if(ptype==='weekly_count') periodicity.timesPerWeek = Number(document.getElementById('g-timesweek').value)||1;
     if(ptype==='monthly_count') periodicity.timesPerMonth = Number(document.getElementById('g-timesmonth').value)||1;
     if(ptype==='custom_interval') periodicity.intervalDays = Number(document.getElementById('g-interval').value)||1;
+    if(ptype==='yearly_count') periodicity.timesPerYear = Number(document.getElementById('g-timesyear').value)||1;
+    if(ptype==='specific_date') periodicity.date = document.getElementById('g-date').value;
 
     const payload = {
       title, description: document.getElementById('g-desc').value.trim(),
@@ -1381,6 +1678,8 @@ function openGoalModal(goal){
       reward: { enabled: document.getElementById('g-rw-en').checked, amount: Number(document.getElementById('g-rw-amt').value)||0 },
       penalty: { enabled: document.getElementById('g-pn-en').checked, amount: Number(document.getElementById('g-pn-amt').value)||0 },
       streakBonus: { enabled: document.getElementById('g-sb-en').checked, everyN: Number(document.getElementById('g-sb-every').value)||7, amount: Number(document.getElementById('g-sb-amt').value)||0 },
+      reminderEnabled: document.getElementById('g-rem-en').checked,
+      reminderTime: document.getElementById('g-rem-time').value || '20:00',
       active: goal?.active ?? true,
       updatedAt: serverTimestamp(),
     };
@@ -1409,20 +1708,25 @@ function openProductModal(product){
     <div class="field"><label>Descrição</label><textarea id="p-desc">${product?.description||''}</textarea></div>
     <div class="field-row">
       <div class="field"><label>Preço</label><input type="number" step="0.01" id="p-price" value="${product?.price??10}"></div>
-      <div class="field"><label>Estoque</label><input type="number" id="p-stock" value="${product?.stockQuantity??1}"></div>
-      <div class="field"><label>Cooldown (dias)</label><input type="number" id="p-cooldown" value="${product?.cooldownDays??7}"></div>
+      <div class="field"><label>Reposição (dias)</label><input type="number" id="p-cooldown" value="${product?.cooldownDays??7}"></div>
     </div>
-    <button class="btn btn-primary btn-block" id="p-save">${isEdit?'Salvar':'Criar produto'}</button>
+    <div class="checkline"><input type="checkbox" id="p-unlimited" ${product?.stockQuantity==null?'checked':''}><label for="p-unlimited">Estoque ilimitado (pode resgatar sempre que repuser)</label></div>
+    <div class="field" id="p-stock-wrap" style="${product?.stockQuantity==null?'display:none':''}"><label>Estoque (quantas vezes pode ser resgatado)</label><input type="number" id="p-stock" value="${product?.stockQuantity??1}"></div>
+    <button class="btn btn-primary btn-block" id="p-save">${isEdit?'Salvar':'Criar recompensa'}</button>
   `);
   document.getElementById('mClose').onclick = closeModal;
+  document.getElementById('p-unlimited').addEventListener('change', (e)=>{
+    document.getElementById('p-stock-wrap').style.display = e.target.checked ? 'none' : '';
+  });
   document.getElementById('p-save').onclick = async ()=>{
     const name = document.getElementById('p-name').value.trim();
-    if(!name){ alert('Dê um nome ao produto.'); return; }
+    if(!name){ alert('Dê um nome à recompensa.'); return; }
+    const unlimited = document.getElementById('p-unlimited').checked;
     const payload = {
       name, emoji: document.getElementById('p-emoji').value.trim()||'🎁',
       description: document.getElementById('p-desc').value.trim(),
       price: Number(document.getElementById('p-price').value)||0,
-      stockQuantity: Number(document.getElementById('p-stock').value)||0,
+      stockQuantity: unlimited ? null : (Number(document.getElementById('p-stock').value)||0),
       cooldownDays: Number(document.getElementById('p-cooldown').value)||0,
     };
     if(isEdit) await updateDoc(doc(db,'products',product.id), payload);
@@ -1434,21 +1738,27 @@ function openProductModal(product){
 /* --- Compra --- */
 function openPurchaseModal(product){
   const p1n = state.settings?.p1?.name||'Você', p2n = state.settings?.p2?.name||'Ela';
+  const cur = state.currentUser==='p2' ? 'p2' : 'p1';
   openModalHtml(`
     <button class="modal-close" id="mClose">×</button>
-    <h3>Comprar ${product.emoji||''} ${product.name}</h3>
-    <p class="muted" style="margin-bottom:14px;">${fmtMoney(product.price)} · quem está comprando?</p>
+    <h3>Resgatar ${product.emoji||''} ${product.name}</h3>
+    <p class="muted" style="margin-bottom:14px;">${fmtMoney(product.price)} · quem está resgatando?</p>
     <div class="radio-cards" style="margin-bottom:16px;">
-      <label><input type="radio" name="buy-person" value="p1" checked>${p1n} (${fmtMoney(balance('p1'))})</label>
-      <label><input type="radio" name="buy-person" value="p2">${p2n} (${fmtMoney(balance('p2'))})</label>
+      <label><input type="radio" name="buy-person" value="p1" ${cur==='p1'?'checked':''}>${personEmoji('p1')} ${p1n} (${fmtMoney(balance('p1'))})</label>
+      <label><input type="radio" name="buy-person" value="p2" ${cur==='p2'?'checked':''}>${personEmoji('p2')} ${p2n} (${fmtMoney(balance('p2'))})</label>
     </div>
-    <button class="btn btn-primary btn-block" id="buy-confirm">Confirmar compra</button>
+    <button class="btn btn-primary btn-block" id="buy-confirm">Confirmar resgate</button>
   `);
   document.getElementById('mClose').onclick = closeModal;
   document.getElementById('buy-confirm').onclick = async ()=>{
     const personId = document.querySelector('input[name="buy-person"]:checked').value;
+    if(state.settings?.allowNegative===false && balance(personId) < (Number(product.price)||0)){
+      alert('Saldo insuficiente para este resgate (saldo negativo está desativado nas configurações).');
+      return;
+    }
     await purchaseProduct(product, personId);
     closeModal();
+    toast('Resgatado! Aproveitem ❤️');
   };
 }
 
@@ -1579,6 +1889,15 @@ function toast(msg){
   const el=document.createElement('div'); el.className='toast'; el.textContent=msg;
   root.appendChild(el); setTimeout(()=>el.remove(), 2600);
 }
+function showUndoToast(){
+  const root=document.getElementById('toastRoot');
+  root.querySelectorAll('.toast-undo').forEach(e=>e.remove());
+  const el=document.createElement('div'); el.className='toast toast-undo'; el.style.pointerEvents='auto';
+  el.innerHTML=`Feito! <button class="undo-btn">Desfazer</button>`;
+  el.querySelector('button').onclick=()=>{ el.remove(); performUndo(); };
+  root.appendChild(el);
+  setTimeout(()=>{ if(el.isConnected) el.remove(); }, 6000);
+}
 const WIN_LINES=['BOAAAA! 🔥','ISSO! 💪','ARRASOU! ✨','MANDOU BEM! 🎉','ORGULHO! 💖'];
 function celebrate(kind, amount, streak){
   const root=document.getElementById('celebrateRoot');
@@ -1613,6 +1932,529 @@ function spawnParticles(root){
     root.appendChild(p); setTimeout(()=>p.remove(), 950);
   }
 }
+
+/* =========================================================
+   BIBLIOTECA INICIAL (metas + recompensas prontas, editáveis)
+   ========================================================= */
+function expandPer(code){
+  if(code==='d') return {type:'daily'};
+  if(code[0]==='w') return {type:'weekly_count', timesPerWeek:Number(code.slice(1))||1};
+  if(code[0]==='m') return {type:'monthly_count', timesPerMonth:Number(code.slice(1))||1};
+  return {type:'daily'};
+}
+function perShort(code){
+  if(code==='d') return 'todo dia';
+  if(code[0]==='w'){ const n=Number(code.slice(1)); return n===1?'1x/semana':`${n}x/semana`; }
+  if(code[0]==='m'){ const n=Number(code.slice(1)); return n===1?'1x/mês':`${n}x/mês`; }
+  return code;
+}
+// itens: t=título, e=emoji, per=periodicidade, rw=recompensa, pn=penalidade(0=off),
+//        m=tipo medição (opcional), tv=alvo, u=unidade, resp=responsabilidade casal
+const LIB_GOALS = [
+  {cat:'🏋️ Saúde & atividade', part:'pick', items:[
+    {t:'Treinar', e:'🏋️', per:'w5', rw:10, pn:5},
+    {t:'Caminhar', e:'🚶', per:'w3', rw:6, pn:0},
+    {t:'Fazer cardio', e:'🏃', per:'w3', rw:7, pn:0},
+    {t:'Alongar 10 min', e:'🧘', per:'d', rw:4, pn:0},
+    {t:'Exercício em casa', e:'💪', per:'w3', rw:6, pn:0},
+    {t:'Dormir no horário', e:'💤', per:'d', rw:5, pn:3},
+    {t:'Dormir 7–8 horas', e:'😴', per:'d', rw:5, pn:0},
+    {t:'Sem celular antes de dormir', e:'📱', per:'d', rw:4, pn:0},
+  ]},
+  {cat:'🥗 Alimentação', part:'pick', items:[
+    {t:'Beber água', e:'💧', per:'d', m:'numeric', tv:2000, u:'ml', rw:3, pn:2},
+    {t:'Refeição saudável', e:'🥗', per:'d', rw:4, pn:2},
+    {t:'Comer frutas', e:'🍎', per:'d', rw:3, pn:0},
+    {t:'Comer vegetais', e:'🥦', per:'d', rw:3, pn:0},
+    {t:'Controlar doces', e:'🍬', per:'d', rw:3, pn:2},
+    {t:'Evitar refrigerante', e:'🥤', per:'d', rw:3, pn:2},
+    {t:'Evitar besteiras na semana', e:'🍟', per:'d', rw:4, pn:2},
+  ]},
+  {cat:'🧠 Bem-estar', part:'pick', items:[
+    {t:'Momento para mim', e:'🧠', per:'d', rw:4, pn:0},
+    {t:'Ler', e:'📖', per:'d', rw:5, pn:0},
+    {t:'Fazer algo que gosto', e:'🎧', per:'d', rw:4, pn:0},
+    {t:'Sair um pouco de casa', e:'🌳', per:'w3', rw:5, pn:0},
+    {t:'Meditar/relaxar 10 min', e:'🧘', per:'d', rw:4, pn:0},
+    {t:'Pegar um pouco de sol', e:'☀️', per:'d', rw:3, pn:0},
+    {t:'Período sem redes sociais', e:'📵', per:'d', rw:4, pn:0},
+    {t:'Autocuidado', e:'🛁', per:'w1', rw:6, pn:0},
+  ]},
+  {cat:'🏠 Vida doméstica', part:'pick', items:[
+    {t:'Arrumar a cama', e:'🛏️', per:'d', rw:3, pn:0},
+    {t:'Lavar a louça', e:'🍽️', per:'d', rw:4, pn:2},
+    {t:'Arrumar o quarto', e:'🧹', per:'w1', rw:5, pn:0},
+    {t:'Limpar a casa', e:'🧽', per:'w1', rw:8, pn:0},
+    {t:'Tirar o lixo', e:'🗑️', per:'w3', rw:3, pn:0},
+    {t:'Lavar roupa', e:'🧺', per:'w1', rw:5, pn:0},
+    {t:'Minha parte nas tarefas', e:'🧹', per:'d', m:'percentage', tv:100, u:'%', rw:5, pn:0},
+  ]},
+  {cat:'💰 Financeiro', part:'pick', items:[
+    {t:'Não gastar com besteiras', e:'💰', per:'d', rw:4, pn:3},
+    {t:'Registrar gastos', e:'📊', per:'d', rw:3, pn:0},
+    {t:'Guardar dinheiro', e:'🏦', per:'w1', rw:6, pn:0},
+    {t:'Não comprar por impulso', e:'🛒', per:'w1', rw:5, pn:0},
+    {t:'Economizar no mês', e:'💵', per:'m1', m:'financial', tv:200, u:'R$', rw:10, pn:0},
+    {t:'Organizar contas', e:'🧾', per:'w1', rw:5, pn:0},
+  ]},
+  {cat:'📚 Produtividade', part:'pick', items:[
+    {t:'Cumprir tarefas do dia', e:'📋', per:'d', rw:5, pn:3},
+    {t:'Acordar no horário', e:'⏰', per:'d', rw:4, pn:3},
+    {t:'Focar no trabalho/estudo', e:'💻', per:'d', rw:6, pn:0},
+    {t:'Estudar', e:'📚', per:'d', rw:5, pn:0},
+    {t:'Planejar o dia', e:'📝', per:'d', rw:3, pn:0},
+    {t:'Concluir tarefa prioritária', e:'🎯', per:'d', rw:5, pn:0},
+  ]},
+  {cat:'❤️ Conexão (casal)', part:'both', resp:'either', items:[
+    {t:'Tempo de qualidade juntos', e:'❤️', per:'d', rw:8, pn:0},
+    {t:'Conversar sem celular', e:'🗣️', per:'d', rw:5, pn:0},
+    {t:'Dar carinho/atenção', e:'🥰', per:'d', rw:5, pn:0, resp:'each'},
+    {t:'Beijo de propósito', e:'💋', per:'d', rw:4, pn:0},
+    {t:'Abraço demorado', e:'🤗', per:'d', rw:4, pn:0},
+    {t:'Perguntar como foi o dia', e:'💬', per:'d', rw:4, pn:0, resp:'each'},
+    {t:'Elogiar o parceiro', e:'💖', per:'w3', rw:5, pn:0, resp:'each'},
+  ]},
+  {cat:'👫 Dates & casal', part:'both', resp:'either', items:[
+    {t:'Date de casal', e:'🍷', per:'w1', rw:15, pn:0},
+    {t:'Noite de filme juntos', e:'🎬', per:'w1', rw:10, pn:0},
+    {t:'Cozinhar juntos', e:'🍳', per:'w1', rw:10, pn:0},
+    {t:'Jantar sem celular', e:'🍽️', per:'w1', rw:8, pn:0},
+    {t:'Tirar foto juntos', e:'📸', per:'w1', rw:5, pn:0},
+    {t:'Jogar algo juntos', e:'🎮', per:'w1', rw:6, pn:0},
+    {t:'1 hora sem celular juntos', e:'📵', per:'d', rw:5, pn:0},
+    {t:'Passeio diferente', e:'🚗', per:'m2', rw:12, pn:0},
+    {t:'Surpresa para o outro', e:'💕', per:'m2', rw:12, pn:0, resp:'each'},
+    {t:'Planejar passeio/viagem', e:'✈️', per:'m1', rw:15, pn:0},
+  ]},
+];
+// recompensas: price, cd=reposição(dias), stock=null (ilimitado) ou número
+const LIB_PRODUCTS = [
+  {cat:'🍦 Comidinhas', items:[
+    {t:'Sorvete', e:'🍦', desc:'Uma pausa gostosa juntos.', price:12, cd:7, stock:null},
+    {t:'Chocolate', e:'🍫', desc:'Um docinho pra alegrar o dia.', price:8, cd:3, stock:null},
+    {t:'Sobremesa', e:'🍰', desc:'Aquele docinho especial.', price:15, cd:7, stock:null},
+    {t:'Milkshake', e:'🥤', desc:'Cremoso e gelado.', price:14, cd:7, stock:null},
+    {t:'Café especial', e:'☕', desc:'Uma pausa aconchegante.', price:10, cd:3, stock:null},
+    {t:'Pipoca + filme', e:'🍿', desc:'Combo perfeito de sofá.', price:12, cd:7, stock:null},
+    {t:'Bubble tea', e:'🧋', desc:'Pra adoçar a tarde.', price:15, cd:7, stock:null},
+    {t:'Café da manhã especial', e:'🥞', desc:'Começar o dia com carinho.', price:18, cd:7, stock:null},
+  ]},
+  {cat:'❤️ Experiências de casal', items:[
+    {t:'Rodízio japonês', e:'🍣', desc:'Hoje a dieta fica para amanhã.', price:60, cd:30, stock:null},
+    {t:'Pizza', e:'🍕', desc:'Massa, queijo e amor.', price:40, cd:14, stock:null},
+    {t:'Hambúrguer', e:'🍔', desc:'Aquele lanche que vocês amam.', price:35, cd:14, stock:null},
+    {t:'Cinema', e:'🎬', desc:'Escolham um filme e aproveitem.', price:40, cd:14, stock:null},
+    {t:'Jantar em restaurante', e:'🍽️', desc:'Uma noite especial só de vocês.', price:80, cd:30, stock:null},
+    {t:'Passeio noturno', e:'🌃', desc:'A cidade à noite, juntinhos.', price:30, cd:14, stock:null},
+    {t:'Boliche', e:'🎳', desc:'Uma disputa divertida.', price:50, cd:30, stock:null},
+    {t:'Piquenique', e:'🧺', desc:'Comida boa ao ar livre.', price:40, cd:30, stock:null},
+    {t:'Dia de praia', e:'🏖️', desc:'Sol, mar e vocês dois.', price:70, cd:30, stock:null},
+    {t:'Dia de relaxamento', e:'💆', desc:'Só descanso e mimo.', price:60, cd:30, stock:null},
+    {t:'Sessão de fotos', e:'📸', desc:'Registrar um momento de vocês.', price:50, cd:30, stock:null},
+  ]},
+  {cat:'😈 Bônus divertidos', items:[
+    {t:'Escolher o programa do dia', e:'👑', desc:'Hoje quem manda é você.', price:10, cd:1, stock:null},
+    {t:'Escolher o jogo', e:'🎮', desc:'A noite é sua.', price:8, cd:1, stock:null},
+    {t:'Escolher o jantar', e:'🍕', desc:'Você decide o cardápio.', price:10, cd:3, stock:null},
+    {t:'Dormir até mais tarde', e:'🛌', desc:'Uma manhã preguiçosa merecida.', price:15, cd:7, stock:null},
+    {t:'Massagem', e:'💆', desc:'10 minutinhos de massagem.', price:25, cd:7, stock:null},
+    {t:'Dia sem obrigação', e:'😴', desc:'Zero tarefas, só descanso.', price:40, cd:30, stock:null},
+    {t:'Pequeno mimo', e:'🛍️', desc:'Aquele agrado que dá vontade.', price:30, cd:14, stock:null},
+    {t:'Caixinha surpresa', e:'🎲', desc:'Uma recompensa surpresa pra vocês!', price:30, cd:7, stock:null},
+  ]},
+  {cat:'🏆 Recompensas grandes', items:[
+    {t:'Ir a um show/evento', e:'🎟️', desc:'Uma experiência marcante.', price:150, cd:60, stock:2},
+    {t:'Diária em hotel', e:'🏨', desc:'Uma noite especial fora de casa.', price:250, cd:90, stock:1},
+    {t:'Compra especial', e:'🎁', desc:'Aquele desejo maior.', price:200, cd:60, stock:1},
+    {t:'Viagem de casal', e:'✈️', desc:'A recompensa dos sonhos.', price:400, cd:90, stock:1},
+  ]},
+];
+
+function goalExists(baked, participant){
+  return state.goals.some(g=>g.title===baked && g.participant===participant);
+}
+function productExists(name){ return state.products.some(p=>p.name===name); }
+
+async function addLibGoal(item, catObj, selectedPerson){
+  const part = item.part || catObj.part;
+  const participant = part==='pick' ? selectedPerson : part;
+  const m = item.m || 'boolean';
+  const baked = `${item.e} ${item.t}`;
+  if(goalExists(baked, participant)) return;
+  await addDoc(col('goals'), {
+    title: baked, description:'',
+    participant,
+    responsibilityType: participant==='both' ? (item.resp || catObj.resp || 'either') : null,
+    measurementType: m,
+    targetValue: m==='boolean' ? null : (item.tv||0),
+    unit: item.u||'',
+    periodicity: expandPer(item.per),
+    reward:{ enabled: (item.rw||0)>0, amount: item.rw||0 },
+    penalty:{ enabled: (item.pn||0)>0, amount: item.pn||0 },
+    streakBonus:{ enabled:false, everyN:7, amount:0 },
+    active:true, createdAt:serverTimestamp(), createdAtDate:todayStr(),
+  });
+}
+async function addLibProduct(item){
+  if(productExists(item.t)) return;
+  await addDoc(col('products'), {
+    name:item.t, emoji:item.e, description:item.desc||'',
+    price:item.price, stockQuantity:(item.stock===undefined?null:item.stock), cooldownDays:item.cd||0,
+    createdAt:serverTimestamp(),
+  });
+}
+
+const libCtx = { tab:'goals', person:'p1', added:new Set() };
+function openLibraryModal(tab){
+  libCtx.tab = tab || 'goals';
+  libCtx.added = new Set();
+  openModalHtml(`
+    <button class="modal-close" id="mClose">×</button>
+    <h3>✨ Biblioteca</h3>
+    <div class="lib-tabs">
+      <button data-ltab="goals" class="${libCtx.tab==='goals'?'active':''}">🎯 Metas</button>
+      <button data-ltab="products" class="${libCtx.tab==='products'?'active':''}">🎁 Recompensas</button>
+    </div>
+    <div id="libBody"></div>
+  `);
+  document.getElementById('mClose').onclick = closeModal;
+  modalRoot.querySelectorAll('[data-ltab]').forEach(b=>b.addEventListener('click', ()=>{
+    libCtx.tab=b.dataset.ltab;
+    modalRoot.querySelectorAll('[data-ltab]').forEach(x=>x.classList.toggle('active', x.dataset.ltab===libCtx.tab));
+    renderLibBody();
+  }));
+  renderLibBody();
+}
+function renderLibBody(){
+  const body = document.getElementById('libBody');
+  if(libCtx.tab==='goals'){
+    const p1n = state.settings?.p1?.name||'Você', p2n = state.settings?.p2?.name||'Ela';
+    let html = `<div class="lib-seg"><span class="lbl">Metas individuais para:</span>
+      <button data-person="p1" class="${libCtx.person==='p1'?'active':''}">${personEmoji('p1')} ${p1n}</button>
+      <button data-person="p2" class="${libCtx.person==='p2'?'active':''}">${personEmoji('p2')} ${p2n}</button></div>`;
+    LIB_GOALS.forEach((cat,ci)=>{
+      html += `<div class="lib-cat"><span>${cat.cat}</span><button data-addcat="${ci}">Adicionar todas</button></div>`;
+      cat.items.forEach((it,ii)=>{
+        const part = it.part||cat.part;
+        const participant = part==='pick'?libCtx.person:part;
+        const baked = `${it.e} ${it.t}`;
+        const done = libCtx.added.has('g:'+baked+':'+participant) || goalExists(baked, participant);
+        const money = `${it.rw>0?`+${fmtMoney(it.rw)}`:''}${it.pn>0?` / -${fmtMoney(it.pn)}`:''}`;
+        html += `<div class="lib-item">
+          <div class="li-emoji">${it.e}</div>
+          <div class="li-body"><div class="li-title">${it.t}</div>
+            <div class="li-meta">${perShort(it.per)} · ${money}${part==='both'?' · casal':''}</div></div>
+          <button class="lib-add ${done?'added':''}" data-addgoal="${ci}-${ii}">${done?'✓':'+ Add'}</button>
+        </div>`;
+      });
+    });
+    body.innerHTML = html;
+    body.querySelectorAll('[data-person]').forEach(b=>b.addEventListener('click', ()=>{ libCtx.person=b.dataset.person; renderLibBody(); }));
+    body.querySelectorAll('[data-addgoal]').forEach(b=>b.addEventListener('click', async ()=>{
+      const [ci,ii]=b.dataset.addgoal.split('-').map(Number);
+      const cat=LIB_GOALS[ci], it=cat.items[ii];
+      const part=it.part||cat.part, participant=part==='pick'?libCtx.person:part;
+      libCtx.added.add('g:'+`${it.e} ${it.t}`+':'+participant);
+      b.classList.add('added'); b.textContent='✓';
+      await addLibGoal(it, cat, libCtx.person);
+    }));
+    body.querySelectorAll('[data-addcat]').forEach(b=>b.addEventListener('click', async ()=>{
+      const ci=Number(b.dataset.addcat); const cat=LIB_GOALS[ci];
+      for(const it of cat.items){
+        const part=it.part||cat.part, participant=part==='pick'?libCtx.person:part;
+        libCtx.added.add('g:'+`${it.e} ${it.t}`+':'+participant);
+        await addLibGoal(it, cat, libCtx.person);
+      }
+      renderLibBody();
+    }));
+  } else {
+    let html='';
+    LIB_PRODUCTS.forEach((cat,ci)=>{
+      html += `<div class="lib-cat"><span>${cat.cat}</span><button data-addpcat="${ci}">Adicionar todas</button></div>`;
+      cat.items.forEach((it,ii)=>{
+        const done = libCtx.added.has('p:'+it.t) || productExists(it.t);
+        html += `<div class="lib-item">
+          <div class="li-emoji">${it.e}</div>
+          <div class="li-body"><div class="li-title">${it.t}</div>
+            <div class="li-meta">${fmtMoney(it.price)} · ${it.stock==null?'repõe':'x'+it.stock} a cada ${it.cd}d</div></div>
+          <button class="lib-add ${done?'added':''}" data-addprod="${ci}-${ii}">${done?'✓':'+ Add'}</button>
+        </div>`;
+      });
+    });
+    body.innerHTML = html;
+    body.querySelectorAll('[data-addprod]').forEach(b=>b.addEventListener('click', async ()=>{
+      const [ci,ii]=b.dataset.addprod.split('-').map(Number);
+      const it=LIB_PRODUCTS[ci].items[ii];
+      libCtx.added.add('p:'+it.t);
+      b.classList.add('added'); b.textContent='✓';
+      await addLibProduct(it);
+    }));
+    body.querySelectorAll('[data-addpcat]').forEach(b=>b.addEventListener('click', async ()=>{
+      const ci=Number(b.dataset.addpcat);
+      for(const it of LIB_PRODUCTS[ci].items){ libCtx.added.add('p:'+it.t); await addLibProduct(it); }
+      renderLibBody();
+    }));
+  }
+}
+document.getElementById('libGoalsBtn')?.addEventListener('click', ()=>openLibraryModal('goals'));
+document.getElementById('libProductsBtn')?.addEventListener('click', ()=>openLibraryModal('products'));
+window.__lib = openLibraryModal;
+
+/* =========================================================
+   RESET: zerar histórico e dinheiro (ou apagar tudo)
+   ========================================================= */
+async function resetData(mode){
+  const dels=[];
+  state.records.forEach(r=>{ if(!String(r.id).startsWith('temp-')) dels.push(deleteDoc(doc(db,'goalRecords',r.id))); });
+  state.transactions.forEach(t=>dels.push(deleteDoc(doc(db,'transactions',t.id))));
+  state.purchases.forEach(p=>dels.push(deleteDoc(doc(db,'purchases',p.id))));
+  // devolve o estoque dos produtos com limite e zera progresso de desafios manuais
+  state.products.forEach(p=>{ /* estoque volta ao adicionar de novo; mantemos como está */ });
+  state.challenges.forEach(c=>{
+    if(mode==='all') dels.push(deleteDoc(doc(db,'challenges',c.id)));
+    else dels.push(updateDoc(doc(db,'challenges',c.id), {currentCount:0, status:'active'}));
+  });
+  if(mode==='all'){
+    state.goals.forEach(g=>dels.push(deleteDoc(doc(db,'goals',g.id))));
+    state.products.forEach(p=>dels.push(deleteDoc(doc(db,'products',p.id))));
+  }
+  await Promise.all(dels);
+}
+window.__resetData = resetData;
+
+/* =========================================================
+   FASE 1 — IDENTIDADE POR DISPOSITIVO
+   ========================================================= */
+const DEVICE_KEY = 'metinhas_device_user';
+function checkIdentity(){
+  if(!state.settings) return;   // espera as configurações carregarem
+  if(state._identityChecked && state.currentUser){ renderDeviceUser(); return; }
+  const s = state.settings || {};
+  if(s.configured===false){ showWelcomeSetup(); return; }
+  const saved = (()=>{ try{ return localStorage.getItem(DEVICE_KEY); }catch(e){ return null; } })();
+  if(saved==='p1' || saved==='p2'){
+    state.currentUser = saved; state._identityChecked = true; renderDeviceUser();
+  } else {
+    showUserPicker(false);
+  }
+}
+function idOverlay(html){
+  modalRoot.innerHTML = `<div class="id-overlay" id="idOvl">${html}</div>`;
+}
+function closeIdOverlay(){ modalRoot.innerHTML=''; }
+
+function showWelcomeSetup(){
+  const s = state.settings || {};
+  idOverlay(`
+    <div style="font-size:40px;">💞</div>
+    <h2>Bem-vindos ao Metinhas dos Nenéns</h2>
+    <p class="sub">Vamos configurar rapidinho quem são vocês dois. Dá pra mudar depois nas configurações.</p>
+    <div class="id-setup">
+      <div class="fieldset-label">Pessoa 1</div>
+      <div class="field-row">
+        <div class="field"><label>Nome</label><input type="text" id="w-p1name" value="${s.p1?.name||''}" placeholder="Seu nome"></div>
+        <div class="field" style="max-width:70px;"><label>Emoji</label><input type="text" id="w-p1emoji" value="${s.p1?.emoji||'🐻'}"></div>
+      </div>
+      <div class="fieldset-label">Pessoa 2</div>
+      <div class="field-row">
+        <div class="field"><label>Nome</label><input type="text" id="w-p2name" value="${s.p2?.name||''}" placeholder="Nome dela"></div>
+        <div class="field" style="max-width:70px;"><label>Emoji</label><input type="text" id="w-p2emoji" value="${s.p2?.emoji||'🐰'}"></div>
+      </div>
+      <button class="btn btn-primary btn-block" id="w-save" style="margin-top:6px;">Tudo pronto! ❤️</button>
+    </div>
+  `);
+  document.getElementById('w-save').onclick = async ()=>{
+    const p1name=document.getElementById('w-p1name').value.trim()||'Você';
+    const p2name=document.getElementById('w-p2name').value.trim()||'Ela';
+    const merged = {
+      ...state.settings,
+      p1:{ name:p1name, emoji:document.getElementById('w-p1emoji').value.trim()||'🐻', pin:state.settings?.p1?.pin||'' },
+      p2:{ name:p2name, emoji:document.getElementById('w-p2emoji').value.trim()||'🐰', pin:state.settings?.p2?.pin||'' },
+      configured:true,
+    };
+    await setDoc(doc(db,'settings','config'), merged);
+    state.settings = merged;
+    showUserPicker(false);
+  };
+}
+
+function showUserPicker(isSwitch){
+  const s = state.settings || {};
+  idOverlay(`
+    <div style="font-size:34px;">👋</div>
+    <h2>Quem está usando este aparelho?</h2>
+    <p class="sub">A escolha fica salva só neste aparelho. No outro celular, cada um escolhe o seu perfil.</p>
+    <div class="id-people">
+      <div class="id-person" data-pick="p1">
+        <div class="big-av avatar p1">${s.p1?.emoji||'🐻'}</div>
+        <div class="nm">${s.p1?.name||'Você'}</div>
+      </div>
+      <div class="id-person" data-pick="p2">
+        <div class="big-av avatar p2">${s.p2?.emoji||'🐰'}</div>
+        <div class="nm">${s.p2?.name||'Ela'}</div>
+      </div>
+    </div>
+    ${isSwitch?'<button class="btn btn-ghost" id="pick-cancel" style="margin-top:6px;">Cancelar</button>':''}
+  `);
+  modalRoot.querySelectorAll('[data-pick]').forEach(el=>el.addEventListener('click', ()=>{
+    const person = el.dataset.pick;
+    const pin = state.settings?.[person]?.pin;
+    if(pin){ askPin(person, ()=>selectDeviceUser(person)); }
+    else selectDeviceUser(person);
+  }));
+  const cancel=document.getElementById('pick-cancel'); if(cancel) cancel.onclick = ()=>{ closeIdOverlay(); };
+}
+
+function selectDeviceUser(person){
+  state.currentUser = person; state._identityChecked = true;
+  try{ localStorage.setItem(DEVICE_KEY, person); }catch(e){}
+  closeIdOverlay(); renderDeviceUser(); render();
+}
+
+function askPin(person, onOk){
+  const s=state.settings||{};
+  let entered='';
+  const draw=()=>{
+    idOverlay(`
+      <div style="font-size:30px;">🔢</div>
+      <h2>Oi, ${s[person]?.name||''}!</h2>
+      <p class="sub">Digite seu PIN de 4 dígitos.</p>
+      <div class="pin-dots">${[0,1,2,3].map(i=>`<div class="pin-dot ${i<entered.length?'filled':''}"></div>`).join('')}</div>
+      <div class="pin-pad">
+        ${[1,2,3,4,5,6,7,8,9].map(n=>`<button data-k="${n}">${n}</button>`).join('')}
+        <button data-k="back">⌫</button>
+        <button data-k="0">0</button>
+        <button data-k="cancel">✕</button>
+      </div>
+    `);
+    modalRoot.querySelectorAll('[data-k]').forEach(b=>b.addEventListener('click', ()=>{
+      const k=b.dataset.k;
+      if(k==='cancel'){ showUserPicker(true); return; }
+      if(k==='back'){ entered=entered.slice(0,-1); draw(); return; }
+      if(entered.length<4){ entered+=k; }
+      if(entered.length===4){
+        if(entered===String(s[person].pin)){ onOk(); }
+        else { toast('PIN incorreto 😅'); entered=''; setTimeout(draw,300); }
+      } else draw();
+    }));
+  };
+  draw();
+}
+
+function renderDeviceUser(){
+  const slot=document.getElementById('deviceUserSlot');
+  if(!slot) return;
+  if(!state.currentUser){ slot.innerHTML=''; return; }
+  const p=state.currentUser;
+  slot.innerHTML = `<button class="device-chip" id="deviceChip">
+    <span class="av avatar ${p}">${personEmoji(p)}</span>
+    <span>${personLabel(p)}</span> <span class="sw">· trocar</span>
+  </button>`;
+  document.getElementById('deviceChip').onclick = ()=>showUserPicker(true);
+}
+
+/* =========================================================
+   ARQUIVADAS — restaurar ou excluir de vez
+   ========================================================= */
+function openArchivedModal(kind){
+  const isGoals = kind==='goals';
+  const items = (isGoals?state.goals:state.products).filter(x=>x.archived);
+  openModalHtml(`
+    <button class="modal-close" id="mClose">×</button>
+    <h3>🗄️ ${isGoals?'Metas':'Recompensas'} arquivadas</h3>
+    ${items.length===0?`<p class="muted">Nada arquivado aqui.</p>`:''}
+    <div id="archList"></div>
+  `);
+  document.getElementById('mClose').onclick = closeModal;
+  const list=document.getElementById('archList');
+  list.innerHTML = items.map(it=>`
+    <div class="lib-item">
+      <div class="li-emoji">${isGoals?'🎯':(it.emoji||'🎁')}</div>
+      <div class="li-body"><div class="li-title">${isGoals?it.title:it.name}</div></div>
+      <div class="btn-row">
+        <button class="btn btn-sm" data-restore="${it.id}">Restaurar</button>
+        <button class="btn btn-ghost btn-sm" data-purge="${it.id}">Excluir</button>
+      </div>
+    </div>`).join('');
+  list.querySelectorAll('[data-restore]').forEach(b=>b.addEventListener('click', async ()=>{
+    await updateDoc(doc(db, isGoals?'goals':'products', b.dataset.restore), {archived:false});
+    openArchivedModal(kind);
+  }));
+  list.querySelectorAll('[data-purge]').forEach(b=>b.addEventListener('click', async ()=>{
+    if(confirm('Excluir de vez? O histórico já registrado é mantido, mas o item some para sempre.')){
+      await deleteDoc(doc(db, isGoals?'goals':'products', b.dataset.purge));
+      openArchivedModal(kind);
+    }
+  }));
+}
+window.__archived = openArchivedModal;
+
+// dispara a checagem de identidade também no primeiro carregamento (caso settings já exista)
+checkIdentity();
+
+/* =========================================================
+   ADMIN — correção de estoque e extrato completo
+   ========================================================= */
+function openStockAdmin(){
+  const prods = [...state.products].sort((a,b)=>(a.name||'').localeCompare(b.name||''));
+  openModalHtml(`
+    <button class="modal-close" id="mClose">×</button>
+    <h3>📦 Corrigir estoque</h3>
+    <p class="muted" style="margin-bottom:12px;">Ajuste o estoque de cada recompensa. Marque "∞" para estoque ilimitado.</p>
+    ${prods.length===0?'<p class="muted">Nenhuma recompensa cadastrada.</p>':''}
+    <div id="stockList"></div>
+  `);
+  document.getElementById('mClose').onclick = closeModal;
+  const list=document.getElementById('stockList');
+  list.innerHTML = prods.map(p=>`
+    <div class="lib-item">
+      <div class="li-emoji">${p.emoji||'🎁'}</div>
+      <div class="li-body"><div class="li-title">${p.name}${p.archived?' <span class="muted">(arquivada)</span>':''}</div></div>
+      <label style="display:flex;align-items:center;gap:4px;font-size:12px;font-weight:700;">∞<input type="checkbox" data-unl="${p.id}" ${p.stockQuantity==null?'checked':''} style="width:16px;height:16px;accent-color:var(--accent);"></label>
+      <input type="number" data-stock="${p.id}" value="${p.stockQuantity??''}" ${p.stockQuantity==null?'disabled':''} style="width:64px;padding:7px;border-radius:9px;border:1px solid var(--hair);font-size:13px;">
+      <button class="lib-add" data-save="${p.id}">Salvar</button>
+    </div>`).join('');
+  list.querySelectorAll('[data-unl]').forEach(chk=>chk.addEventListener('change',()=>{
+    const inp=list.querySelector(`[data-stock="${chk.dataset.unl}"]`); inp.disabled=chk.checked;
+  }));
+  list.querySelectorAll('[data-save]').forEach(b=>b.addEventListener('click', async ()=>{
+    const id=b.dataset.save;
+    const unl=list.querySelector(`[data-unl="${id}"]`).checked;
+    const val=list.querySelector(`[data-stock="${id}"]`).value;
+    await updateDoc(doc(db,'products',id), {stockQuantity: unl?null:(Number(val)||0)});
+    b.classList.add('added'); b.textContent='✓';
+    setTimeout(()=>{ b.classList.remove('added'); b.textContent='Salvar'; }, 1200);
+  }));
+}
+
+function openTxAdmin(filter){
+  const label={all:'Todas', p1:personLabel('p1'), p2:personLabel('p2'), couple:'Casal'};
+  const typeLabel={goal_reward:'Recompensa', goal_penalty:'Penalidade', purchase:'Compra', streak_bonus:'Bônus streak', challenge_reward:'Desafio', manual_adjustment:'Ajuste manual'};
+  let txs=[...state.transactions].sort((a,b)=>(b.date||'').localeCompare(a.date||''));
+  if(filter && filter!=='all') txs=txs.filter(t=>t.personId===filter);
+  openModalHtml(`
+    <button class="modal-close" id="mClose">×</button>
+    <h3>🧾 Transações</h3>
+    <div class="lib-seg" style="margin-bottom:10px;">
+      ${['all','p1','p2','couple'].map(k=>`<button data-txf="${k}" class="${(filter||'all')===k?'active':''}">${k==='all'?'Todas':(k==='couple'?'❤️ Casal':personEmoji(k)+' '+label[k])}</button>`).join('')}
+    </div>
+    <p class="muted" style="margin-bottom:8px;">${txs.length} lançamento(s) · saldo do filtro: ${fmtMoney(txs.reduce((s,t)=>s+t.amount,0))}</p>
+    <div id="txList" style="max-height:52vh;overflow-y:auto;"></div>
+  `);
+  document.getElementById('mClose').onclick = closeModal;
+  modalRoot.querySelectorAll('[data-txf]').forEach(b=>b.addEventListener('click',()=>openTxAdmin(b.dataset.txf)));
+  const list=document.getElementById('txList');
+  list.innerHTML = txs.length? txs.slice(0,300).map(t=>`
+    <div class="flex-between" style="padding:8px 2px;border-bottom:1px solid var(--hair);font-size:12.5px;gap:8px;">
+      <div style="min-width:0;">
+        <div style="font-weight:600;">${personEmoji(t.personId)} ${t.description||typeLabel[t.type]||t.type}</div>
+        <div class="muted" style="font-size:11px;">${t.date||''} · ${typeLabel[t.type]||t.type}</div>
+      </div>
+      <div style="font-weight:800;white-space:nowrap;color:${t.amount>=0?'var(--ok)':'var(--danger)'}">${t.amount>=0?'+':''}${fmtMoney(t.amount)}</div>
+    </div>`).join('') : '<p class="muted">Nenhuma transação.</p>';
+}
+window.__stockAdmin = openStockAdmin;
+window.__txAdmin = openTxAdmin;
 
 </script>
 </body>
